@@ -1,43 +1,25 @@
----
-title: Diagrama de Componentes – Gerador de Senhas CLI
----
-
 flowchart TD
-    A[Usuário CLI] -->|Argumentos| B(Função Principal)
-    B --> C{Validação dos Critérios}
-    C -->|Tamanho| D1[Teste: Tamanho da Senha]
-    C -->|Maiúsculas| D2[Teste: Inclusão de Maiúsculas]
-    C -->|Minúsculas| D3[Teste: Inclusão de Minúsculas]
-    C -->|Números| D4[Teste: Inclusão de Números]
-    C -->|Especiais| D5[Teste: Inclusão de Especiais]
-    D1 --> E[Gerador de Senha]
+    A["Usuário CLI"] -->|"Argumentos"| B["Função Principal"]
+    B --> C{"Validação dos Critérios"}
+    C -->|"Tamanho"| D1["Teste: Tamanho da Senha"]
+    C -->|"Maiúsculas"| D2["Teste: Inclusão de Maiúsculas"]
+    C -->|"Minúsculas"| D3["Teste: Inclusão de Minúsculas"]
+    C -->|"Números"| D4["Teste: Inclusão de Números"]
+    C -->|"Especiais"| D5["Teste: Inclusão de Especiais"]
+    D1 --> E["Gerador de Senha"]
     D2 --> E
     D3 --> E
     D4 --> E
     D5 --> E
-    E --> F[Exibir Senha]
-    F --> G[Saída no Terminal]
-    subgraph Testes de Critérios
+    E --> F["Exibir Senha"]
+    F --> G["Saída no Terminal"]
+    subgraph "Testes de Critérios"
         D1
         D2
         D3
         D4
         D5
     end
-    style B fill:#e0e7ff,stroke:#3730a3
-    style E fill:#bbf7d0,stroke:#166534
-    style F fill:#fef9c3,stroke:#a16207
-    style G fill:#fca5a5,stroke:#b91c1c
----
-title: Diagrama de Componentes – Gerador de Senhas CLI
----
-
-flowchart TD
-    A[Usuário CLI] -->|Argumentos| B(Função Principal)
-    B --> C{Validação dos Critérios}
-    C -->|Tamanho| D1[Teste: Tamanho da Senha]
-    C -->|Maiúsculas| D2[Teste: Inclusão de Maiúsculas]
-    C -->|Minúsculas| D3[Teste: Inclusão de Minúsculas]
     C -->|Números| D4[Teste: Inclusão de Números]
     C -->|Especiais| D5[Teste: Inclusão de Especiais]
     D1 --> E[Gerador de Senha]
