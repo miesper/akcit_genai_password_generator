@@ -1,6 +1,7 @@
 """Módulo principal da CLI do gerador de senhas."""
 import click
 from akcit_genai_password_generator.generator import gerar_senha
+from akcit_genai_password_generator.utils import validar_criterios
 
 @click.command()
 @click.option('--length', '-l', default=12, show_default=True, help='Tamanho da senha')
@@ -10,6 +11,11 @@ from akcit_genai_password_generator.generator import gerar_senha
 @click.option('--specials/--no-specials', default=True, show_default=True, help='Incluir caracteres especiais')
 def cli(length, uppercase, lowercase, numbers, specials):
     """Executa a geração de senha conforme opções."""
+    try:
+        validar_criterios(uppercase, lowercase, numbers, specials)
+    except ValueError as e:
+        click.secho(str(e), fg='red')
+        return
     senha = gerar_senha(length, uppercase, lowercase, numbers, specials)
     confs = []
     if uppercase:
