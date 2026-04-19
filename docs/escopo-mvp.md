@@ -8,10 +8,10 @@ Desenvolver uma aplicação de linha de comando (CLI) em Python para geração d
 - Permitir a escolha de inclusão/exclusão de:
   - Letras maiúsculas
   - Letras minúsculas
-  - Números
+  - Números (--numbers)
   - Caracteres especiais
 - Gerar senhas aleatórias de acordo com os critérios definidos.
-- Exibir a senha gerada diretamente no terminal.
+- Exibir a senha gerada diretamente no terminal e copiá-la para a área de transferência.
 - Disponibilizar ajuda e documentação dos comandos via `--help`.
 - Utilizar biblioteca padrão (argparse) ou Click para o parsing dos argumentos.
 

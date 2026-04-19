@@ -7,12 +7,12 @@
   - Critério de aceite: Usuário pode optar por incluir ou não letras maiúsculas na senha.
 - [ ] **RF03** – Permitir inclusão/exclusão de letras minúsculas
   - Critério de aceite: Usuário pode optar por incluir ou não letras minúsculas na senha.
-- [ ] **RF04** – Permitir inclusão/exclusão de números
-  - Critério de aceite: Usuário pode optar por incluir ou não números na senha.
+- [ ] **RF04** – Permitir inclusão/exclusão de números (--numbers)
+  - Critério de aceite: Usuário pode optar por incluir ou não números na senha usando a opção --numbers.
 - [ ] **RF05** – Permitir inclusão/exclusão de caracteres especiais
   - Critério de aceite: Usuário pode optar por incluir ou não caracteres especiais na senha.
-- [ ] **RF06** – Gerar senha aleatória conforme critérios definidos
-  - Critério de aceite: Senha gerada respeita todos os critérios informados pelo usuário.
+- [ ] **RF06** – Gerar senha aleatória conforme critérios definidos e copiar para área de transferência
+  - Critério de aceite: Senha gerada respeita todos os critérios informados pelo usuário e é copiada para a área de transferência.
 
 ## Release 2: Qualidade
 - [ ] **RT01** – Utilizar gerador de números aleatórios seguro (`secrets`)

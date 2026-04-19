@@ -18,15 +18,18 @@ pip install -r requirements.txt
 ```
 
 ## Uso Básico
+
 ```bash
-python main.py --length 12 --uppercase --lowercase --digits --specials
+python main.py --length 12 --uppercase --lowercase --numbers --specials
 ```
 Parâmetros principais:
 - `--length`: tamanho da senha
 - `--uppercase`: incluir letras maiúsculas
 - `--lowercase`: incluir letras minúsculas
-- `--digits`: incluir números
+- `--numbers`: incluir números
 - `--specials`: incluir caracteres especiais
+
+Ao gerar a senha, ela será copiada automaticamente para a área de transferência e uma mensagem será exibida ao usuário.
 
 Para mais opções:
 ```bash
