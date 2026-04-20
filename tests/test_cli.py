@@ -1,3 +1,23 @@
+def test_cli_copia_clipboard_falha(monkeypatch):
+    runner = CliRunner()
+
+    # Simula erro no subprocess.run para forçar o except
+    def fake_run(*args, **kwargs):
+        raise Exception("Erro simulado")
+    monkeypatch.setattr("subprocess.run", fake_run)
+
+    result = runner.invoke(cli, ['--length', '12'])
+    assert "Não foi possível copiar para a área de transferência." in result.output
+
+def test_cli_copia_clipboard_sucesso_win32(monkeypatch):
+    runner = CliRunner()
+
+    # Simula sucesso no subprocess.run e sys.platform como win32
+    monkeypatch.setattr("sys.platform", "win32")
+    monkeypatch.setattr("subprocess.run", lambda *a, **k: None)
+
+    result = runner.invoke(cli, ['--length', '12'])
+    assert "Senha copiada para a área de transferência!" in result.output
 import pytest
 from click.testing import CliRunner
 from akcit_genai_password_generator.cli import cli
