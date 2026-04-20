@@ -1,6 +1,21 @@
 # Gerador de Senhas CLI
 
-Aplicação de linha de comando (CLI) em Python para geração de senhas aleatórias e seguras, com critérios personalizáveis pelo usuário.
+## Problema e Solução
+
+### Problema
+A criação de senhas seguras é uma necessidade constante para proteger contas e dados, mas muitos usuários têm dificuldade em gerar senhas fortes, únicas e que atendam a critérios específicos de segurança.
+
+### Solução
+Este projeto oferece uma ferramenta de linha de comando (CLI) em Python que gera senhas aleatórias, seguras e personalizáveis, permitindo ao usuário definir tamanho, tipos de caracteres e garantindo robustez por meio de validações e testes automatizados.
+
+## Arquitetura
+O projeto segue uma arquitetura modular:
+- **CLI:** Interface de linha de comando baseada em Click.
+- **Core:** Lógica de geração e validação de senhas.
+- **Testes:** Cobertura automatizada com pytest.
+- **Documentação:** Diagramas e escopo em docs/.
+
+Veja o diagrama detalhado em [docs/diagrama.mmd](docs/diagrama.mmd).
 
 ## Escopo
 Gera senhas seguras conforme critérios definidos pelo usuário:
@@ -89,3 +104,12 @@ O relatório em HTML estará disponível em `docs/cov_html/index.html` após a e
 - Escopo: docs/escopo-mvp.md
 - Backlog: docs/backlog.md
 - Diagrama: docs/diagrama.mmd
+
+## Uso da IA no Desenvolvimento
+
+O desenvolvimento deste projeto contou com o apoio do GitHub Copilot (modelo GPT-4.1), utilizado para:
+- Sugerir e revisar código Python.
+- Gerar testes automatizados.
+- Refatorar funções e melhorar validações.
+- Criar e atualizar documentação.
+- Manter histórico e rastreabilidade das decisões via chat, garantindo granularidade nos commits e transparência no processo.
