@@ -1,19 +1,29 @@
 """Funções para geração de senhas seguras."""
+
 import string
 import secrets
+from .utils import validar_tamanho
 
 
 def gerar_senha(tamanho, maiusculas=True, minusculas=True, numeros=True, especiais=True):
     """Gera uma senha aleatória conforme os critérios."""
-    caracteres = ''
+    validar_tamanho(tamanho)
+    pools = []
     if maiusculas:
-        caracteres += string.ascii_uppercase
+        pools.append(string.ascii_uppercase)
     if minusculas:
-        caracteres += string.ascii_lowercase
+        pools.append(string.ascii_lowercase)
     if numeros:
-        caracteres += string.digits
+        pools.append(string.digits)
     if especiais:
-        caracteres += string.punctuation
-    if not caracteres:
+        pools.append(string.punctuation)
+    if not pools:
         raise ValueError('Selecione ao menos um tipo de caractere.')
-    return ''.join(secrets.choice(caracteres) for _ in range(tamanho))
+
+    # Garante pelo menos um caractere de cada tipo solicitado
+    senha = [secrets.choice(pool) for pool in pools]
+    restantes = tamanho - len(senha)
+    todos_caracteres = ''.join(pools)
+    senha += [secrets.choice(todos_caracteres) for _ in range(restantes)]
+    secrets.SystemRandom().shuffle(senha)
+    return ''.join(senha)
