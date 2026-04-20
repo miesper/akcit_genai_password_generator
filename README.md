@@ -41,7 +41,34 @@ python main.py --length 2000000
 
 Ao gerar a senha, ela será copiada automaticamente para a área de transferência e uma mensagem será exibida ao usuário.
 
-Para mais opções:
+
+## Uso Avançado
+
+#### Gerar senha apenas com números e minúsculas, tamanho 20
+```bash
+python main.py --length 20 --no-uppercase --lowercase --numbers --no-specials
+```
+Saída: senha de 20 caracteres, apenas números e letras minúsculas.
+
+#### Gerar senha só com caracteres especiais, tamanho 8
+```bash
+python main.py --length 8 --no-uppercase --no-lowercase --no-numbers --specials
+```
+Saída: senha de 8 caracteres, apenas símbolos.
+
+#### Gerar senha longa (1000 caracteres) com todos os tipos
+```bash
+python main.py --length 1000 --uppercase --lowercase --numbers --specials
+```
+Saída: senha de 1000 caracteres, misturando todos os tipos.
+
+#### Gerar senha e redirecionar para arquivo
+```bash
+python main.py --length 16 > senha.txt
+```
+A senha será salva no arquivo senha.txt.
+
+#### Exibir ajuda detalhada
 ```bash
 python main.py --help
 ```
