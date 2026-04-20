@@ -5,6 +5,8 @@ def validar_tamanho(tamanho):
     """Valida se o tamanho é positivo."""
     if not isinstance(tamanho, int) or tamanho < 1:
         raise ValueError('O tamanho deve ser inteiro positivo.')
+    if tamanho > 1_000_000:
+        raise ValueError('O tamanho máximo permitido é 1.000.000 de caracteres.')
     return True
 
 
