@@ -22,12 +22,22 @@ pip install -r requirements.txt
 ```bash
 python main.py --length 12 --uppercase --lowercase --numbers --specials
 ```
+
 Parâmetros principais:
-- `--length`: tamanho da senha
+- `--length`: tamanho da senha (inteiro positivo, máximo 1.000.000)
 - `--uppercase`: incluir letras maiúsculas
 - `--lowercase`: incluir letras minúsculas
 - `--numbers`: incluir números
 - `--specials`: incluir caracteres especiais
+
+**Limites:**
+- O tamanho deve ser um inteiro positivo e no máximo 1.000.000. Valores decimais ou acima desse limite geram erro amigável.
+
+**Exemplo de erro:**
+```bash
+python main.py --length 2000000
+# Saída: O tamanho máximo permitido é 1.000.000 de caracteres.
+```
 
 Ao gerar a senha, ela será copiada automaticamente para a área de transferência e uma mensagem será exibida ao usuário.
 
