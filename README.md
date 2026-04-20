@@ -73,6 +73,18 @@ A senha será salva no arquivo senha.txt.
 python main.py --help
 ```
 
+## Cobertura de Testes
+
+Para gerar o relatório de cobertura de testes, execute:
+
+```bash
+python -m pytest --cov=akcit_genai_password_generator --cov-report=html:docs/cov_html
+```
+
+O relatório em HTML estará disponível em `docs/cov_html/index.html` após a execução.
+
+> **Nota:** Recomenda-se não versionar a pasta `docs/cov_html` (adicione ao `.gitignore`).
+
 ## Documentação
 - Escopo: docs/escopo-mvp.md
 - Backlog: docs/backlog.md
