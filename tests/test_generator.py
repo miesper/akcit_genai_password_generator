@@ -48,3 +48,16 @@ def test_erro_sem_tipo_caractere():
 def test_tamanho_zero():
     with pytest.raises(ValueError, match='O tamanho deve ser inteiro positivo.'):
         gerar_senha(0)
+
+def test_tamanho_maximo():
+    with pytest.raises(ValueError, match='O tamanho máximo permitido é 1.000.000 de caracteres.'):
+        gerar_senha(1_000_001)
+
+def test_tamanho_decimal():
+    with pytest.raises(ValueError, match='O tamanho deve ser inteiro positivo.'):
+        gerar_senha(12.5)
+
+def test_tamanho_aceito_maximo():
+    senha = gerar_senha(999_999, maiusculas=True, minusculas=False, numeros=False, especiais=False)
+    assert len(senha) == 999_999
+    assert senha.isupper()
