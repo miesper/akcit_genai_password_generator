@@ -1,16 +1,23 @@
 flowchart TD
-    A["Usuário CLI"] -->|"Argumentos"| B["Função Principal"]
-    B --> C{"Validação dos Critérios"}
-    C -- "Critérios válidos" --> D["Gerador de Senha"]
-    C -- "Critérios inválidos" --> H["Mensagem de erro amigável"]
-    D --> E["Exibir Senha"]
+    A["Usuário CLI"] -->|"Argumentos"| B["Função Principal (CLI)"]
+    B --> C1{"Validação do Tamanho"}
+    C1 -- "Tamanho válido" --> C2{"Validação dos Critérios"}
+    C1 -- "Tamanho inválido" --> H["Mensagem de erro amigável"]
+    C2 -- "Critérios válidos" --> D["Gerador de Senha"]
+    C2 -- "Critérios inválidos" --> H
+    D --> D1["Garante pelo menos um de cada tipo selecionado"]
+    D1 --> E["Exibir Senha"]
     E --> F["Saída no Terminal"]
-    E --> G["Copia para área de transferência"]
+    E --> G{"Copia para área de transferência?"}
+    G -- "Sucesso" --> I["Mensagem: Senha copiada!"]
+    G -- "Falha" --> J["Mensagem: Não foi possível copiar"]
     H --> F
     %% Critérios detalhados
-    C -.-> D1["Maiúsculas"]
-    C -.-> D2["Minúsculas"]
-    C -.-> D3["Números"]
-    C -.-> D4["Especiais"]
+    C2 -.-> K1["Maiúsculas"]
+    C2 -.-> K2["Minúsculas"]
+    C2 -.-> K3["Números"]
+    C2 -.-> K4["Especiais"]
     style F fill:#fef9c3,stroke:#a16207
     style G fill:#fca5a5,stroke:#b91c1c
+    style I fill:#bbf7d0,stroke:#15803d
+    style J fill:#fde68a,stroke:#b45309
