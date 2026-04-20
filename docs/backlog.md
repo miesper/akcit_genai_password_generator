@@ -2,7 +2,7 @@
 
 ## Release 1: Core
 - [ ] **RF01** – Permitir definir o tamanho da senha
-  - Critério de aceite: Usuário informa o tamanho e a senha gerada possui exatamente o número de caracteres solicitado.
+  - Critério de aceite: Usuário informa o tamanho (inteiro positivo, máximo 1.000.000) e a senha gerada possui exatamente o número de caracteres solicitado. Valores inválidos (decimais, negativos ou acima do limite) são rejeitados com mensagem clara.
 - [ ] **RF02** – Permitir inclusão/exclusão de letras maiúsculas
   - Critério de aceite: Usuário pode optar por incluir ou não letras maiúsculas na senha.
 - [ ] **RF03** – Permitir inclusão/exclusão de letras minúsculas
