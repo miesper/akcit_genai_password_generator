@@ -46,5 +46,5 @@ def test_erro_sem_tipo_caractere():
         gerar_senha(8, maiusculas=False, minusculas=False, numeros=False, especiais=False)
 
 def test_tamanho_zero():
-    senha = gerar_senha(0)
-    assert senha == ''
+    with pytest.raises(ValueError, match='O tamanho deve ser inteiro positivo.'):
+        gerar_senha(0)
