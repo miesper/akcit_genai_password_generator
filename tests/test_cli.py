@@ -1,3 +1,16 @@
+def test_cli_copia_clipboard_sucesso_darwin(monkeypatch):
+    runner = CliRunner()
+    monkeypatch.setattr("sys.platform", "darwin")
+    monkeypatch.setattr("subprocess.run", lambda *a, **k: None)
+    result = runner.invoke(cli, ['--length', '12'])
+    assert "Senha copiada para a área de transferência!" in result.output
+
+def test_cli_copia_clipboard_sucesso_linux(monkeypatch):
+    runner = CliRunner()
+    monkeypatch.setattr("sys.platform", "linux")
+    monkeypatch.setattr("subprocess.run", lambda *a, **k: None)
+    result = runner.invoke(cli, ['--length', '12'])
+    assert "Senha copiada para a área de transferência!" in result.output
 def test_cli_copia_clipboard_falha(monkeypatch):
     runner = CliRunner()
 
