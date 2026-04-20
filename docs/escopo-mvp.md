@@ -4,7 +4,7 @@
 Desenvolver uma aplicação de linha de comando (CLI) em Python para geração de senhas aleatórias e seguras, permitindo ao usuário definir critérios como tamanho, inclusão de caracteres especiais, números, letras maiúsculas e minúsculas.
 
 ## Requisitos Funcionais
-- Permitir ao usuário definir o tamanho da senha a ser gerada.
+- Permitir ao usuário definir o tamanho da senha a ser gerada (inteiro positivo, máximo 1.000.000).
 - Permitir a escolha de inclusão/exclusão de:
   - Letras maiúsculas
   - Letras minúsculas
@@ -18,7 +18,7 @@ Desenvolver uma aplicação de linha de comando (CLI) em Python para geração d
 ## Requisitos Não Funcionais
 - Implementação em Python 3.8 ou superior.
 - Código limpo, modular e documentado.
-- Interface de linha de comando amigável e robusta a erros de entrada.
+- Interface de linha de comando amigável e robusta a erros de entrada, incluindo rejeição de valores fora do intervalo permitido para o tamanho.
 - Não armazenar senhas geradas em disco ou memória após exibição.
 - Compatibilidade com sistemas operacionais Windows, Linux e macOS.
 - Utilização de gerador de números aleatórios seguro (ex: `secrets` do Python).
