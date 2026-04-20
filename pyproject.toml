@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "akcit-genai-password-generator"
+version = "1.0.0"
+description = "Gerador de senhas CLI com critérios personalizáveis, validação robusta e cobertura de testes."
+authors = [
+    { name = "Miguel Marques de Paiva Esper", email = "miesper@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "click",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov"
+]
+
+[project.scripts]
+gerador-senha = "akcit_genai_password_generator.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["akcit_genai_password_generator"]
